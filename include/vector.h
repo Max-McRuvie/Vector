@@ -4,12 +4,14 @@
 #include <stdlib.h>
 
 typedef struct {
-    void *data;
+    int *data;
     int size;
     int capacity;
-    size_t element_size;
 } Vector;
 
-int vector_init(Vector *vector, size_t element_size, int initial_capacity);
+int vector_init(Vector *vector, int initial_capacity);
+void vector_grow(Vector *vector);
+void vector_push_back(Vector *vector, int value);
+void vector_print(Vector *vector);
 
 #endif
