@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "vector.h"
 
+// Function to initialise vector
 int vector_init(Vector *vector, int initial_capacity){
     vector->data = (int*) malloc(initial_capacity * sizeof(int));
     if(vector->data == NULL){
@@ -13,11 +14,13 @@ int vector_init(Vector *vector, int initial_capacity){
     return 0;
 }
 
+// Helper function to grow vector when out of bounds
 void vector_grow(Vector *vector){
     vector->capacity *= 2;
     vector->data = realloc(vector->data, vector->capacity * sizeof(int));
 }
 
+// Function to push new value onto end of vector
 void vector_push_back(Vector *vector, int value){
     if (vector->size == vector->capacity) {
         vector_grow(vector);
@@ -26,6 +29,7 @@ void vector_push_back(Vector *vector, int value){
     vector->size++;
 }
 
+// Function to print vector entirity
 void vector_print(Vector *vector) {
     for (int i = 0; i < vector->size; i++) {
         printf("%d ", vector->data[i]);
