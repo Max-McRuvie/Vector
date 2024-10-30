@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "vector.h"
 
-int initialise_vector(Vector *vector, size_t element_size, int initial_capacity){
+int vector_init(Vector *vector, size_t element_size, int initial_capacity){
     vector->data = malloc(initial_capacity * element_size);
     if(vector->data == NULL){
         printf("Memory allocation failed!\n");

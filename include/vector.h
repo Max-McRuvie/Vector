@@ -10,6 +10,6 @@ typedef struct {
     size_t element_size;
 } Vector;
 
-int initialise_vector(Vector *vector, size_t element_size, int initial_capacity);
+int vector_init(Vector *vector, size_t element_size, int initial_capacity);
 
 #endif

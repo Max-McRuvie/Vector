@@ -4,7 +4,7 @@
 int main(){
     Vector my_vector;
 
-    if(initialise_vector(&my_vector, sizeof(int), 10) != 0){
+    if(vector_init(&my_vector, sizeof(int), 10) != 0){
         return 1;
     }
     
