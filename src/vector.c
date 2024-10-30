@@ -36,7 +36,6 @@ void vector_shrink(Vector *vector){
         vector->data = realloc(vector->data, vector->capacity * sizeof(int));
         if(vector->data == NULL){
             printf("Memory allocation failed!\n");
-            return 1;
         }
     }
 }
@@ -46,6 +45,16 @@ void vector_pop_back(Vector *vector){
     if(vector->size > 0) {
         vector->size--;
         vector_shrink(vector);
+    }
+}
+
+// Function to retrieve data at a specfic index
+int vector_get_value_at_index(Vector *vector, int index){
+    if(index >= 0 && index < vector->size){
+        return vector->data[index];
+    } else {
+        printf("Invalid index!\n");
+        return -1;
     }
 }
 

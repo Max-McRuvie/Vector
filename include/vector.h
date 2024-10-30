@@ -71,6 +71,17 @@ void vector_shrink(Vector *vector);
 void vector_pop_back(Vector *vector);
 
 /*
+    Function: vector_get_value_at_index
+    
+    Function to retrieve data at a specfic index
+
+    Parameters:
+        vector           - Vector instance
+        index            - Index of the element to retrieved
+*/
+int vector_get_value_at_index(Vector *vector, int index)
+
+/*
     Function: vector_print
     
     Function to print vector entirity
