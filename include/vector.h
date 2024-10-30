@@ -6,11 +6,11 @@
 /*
     Struct: Vector
 
-    Contains details of vector
+    Contains details of the vector.
 
-    data     - The stored data within the vector  
-    size     - The amount of elements stored within the vector
-    capacity - The limit the vector can hold
+    data     - The stored data within the vector.  
+    size     - The number of elements stored within the vector.
+    capacity - The maximum number of elements the vector can hold.
 */
 typedef struct {
     int *data;
@@ -21,74 +21,80 @@ typedef struct {
 /*
     Function: vector_init
     
-    This function initialises the vector to a specified capacity
+    Initializes the vector to a specified capacity.
 
     Parameters:
-        vector           - Vector instance
-        initial_capacity - Specified size for vector capacity
+        vector           - Pointer to the Vector instance to initialize.
+        initial_capacity - The initial capacity for the vector.
+    
+    Returns:
+        0 if successful, or -1 if there was an error.
 */
 int vector_init(Vector *vector, int initial_capacity);
 
 /*
     Function: vector_grow
     
-    This function is a helper function to grow vector when out of bounds
+    Grows the vector when it is out of bounds.
 
     Parameters:
-        vector           - Vector instance
+        vector - Pointer to the Vector instance.
 */
 void vector_grow(Vector *vector);
 
 /*
     Function: vector_push_back
     
-    Function to push new value onto end of vector
+    Adds a new value to the end of the vector.
 
     Parameters:
-        vector           - Vector instance
-        value            - Value to be added to vector
+        vector - Pointer to the Vector instance.
+        value  - The value to be added to the vector.
 */
 void vector_push_back(Vector *vector, int value);
 
 /*
     Function: vector_shrink
     
-    This function is a helper function to shrink vector when less than a quarter of capacity is being used
+    Shrinks the vector when less than a quarter of its capacity is being used.
 
     Parameters:
-        vector           - Vector instance
+        vector - Pointer to the Vector instance.
 */
 void vector_shrink(Vector *vector);
 
 /*
     Function: vector_pop_back
     
-    Function to pop value off end of vector
+    Removes the value at the end of the vector.
 
     Parameters:
-        vector           - Vector instance
+        vector - Pointer to the Vector instance.
 */
 void vector_pop_back(Vector *vector);
 
 /*
     Function: vector_get_value_at_index
     
-    Function to retrieve data at a specfic index
+    Retrieves data at a specific index in the vector.
 
     Parameters:
-        vector           - Vector instance
-        index            - Index of the element to retrieved
+        vector - Pointer to the Vector instance.
+        index  - The index of the element to retrieve.
+    
+    Returns:
+        The value at the specified index, or an error code if out of bounds.
 */
-int vector_get_value_at_index(Vector *vector, int index)
+int vector_get_value_at_index(Vector *vector, int index);
 
 /*
     Function: vector_print
     
-    Function to print vector entirity
+    Prints the entirety of the vector.
 
     Parameters:
-        vector           - Vector instance
+        vector - Pointer to the Vector instance.
 */
 void vector_print(Vector *vector);
 
-#endif
+#endif // VECTOR_H
