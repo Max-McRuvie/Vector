@@ -51,6 +51,26 @@ void vector_grow(Vector *vector);
 void vector_push_back(Vector *vector, int value);
 
 /*
+    Function: vector_shrink
+    
+    This function is a helper function to shrink vector when less than a quarter of capacity is being used
+
+    Parameters:
+        vector           - Vector instance
+*/
+void vector_shrink(Vector *vector);
+
+/*
+    Function: vector_pop_back
+    
+    Function to pop value off end of vector
+
+    Parameters:
+        vector           - Vector instance
+*/
+void vector_pop_back(Vector *vector);
+
+/*
     Function: vector_print
     
     Function to print vector entirity

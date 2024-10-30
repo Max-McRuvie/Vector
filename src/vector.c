@@ -29,6 +29,26 @@ void vector_push_back(Vector *vector, int value){
     vector->size++;
 }
 
+// Helper function to shrink vector when less of a quarter of capacity is being used
+void vector_shrink(Vector *vector){
+    if(vector->size < vector->capacity / 4 && vector->capacity > 1){
+        vector->capacity /= 2;
+        vector->data = realloc(vector->data, vector->capacity * sizeof(int));
+        if(vector->data == NULL){
+            printf("Memory allocation failed!\n");
+            return 1;
+        }
+    }
+}
+
+// Function to pop value off end of vector
+void vector_pop_back(Vector *vector){
+    if(vector->size > 0) {
+        vector->size--;
+        vector_shrink(vector);
+    }
+}
+
 // Function to print vector entirity
 void vector_print(Vector *vector) {
     for (int i = 0; i < vector->size; i++) {
