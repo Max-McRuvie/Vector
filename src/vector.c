@@ -58,6 +58,16 @@ int vector_get_value_at_index(Vector *vector, int index){
     }
 }
 
+// Function to find the index of a specified value
+int vector_find_index_of_value(Vector *vector, int value){
+    for(int i = 0; i <= vector->size; i++){
+        if(vector->data[i] == value){
+            return i;
+        }
+    }
+    return -1;
+}
+
 // Function to print vector entirity
 void vector_print(Vector *vector) {
     for (int i = 0; i < vector->size; i++) {

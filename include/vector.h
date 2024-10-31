@@ -89,6 +89,22 @@ void vector_pop_back(Vector *vector);
 int vector_get_value_at_index(Vector *vector, int index);
 
 /*
+    Function: vector_find_index_of_value
+    
+    Searches for the first occurrence of a specified value within the vector
+    and returns its index.
+
+    Parameters:
+        vector - Pointer to the Vector instance.
+        value  - The value to search for within the vector.
+    
+    Returns:
+        The index of the first occurrence of the specified value if found;
+        -1 if the value is not present in the vector.
+*/
+int vector_find_index_of_value(Vector *vector, int value);
+
+/*
     Function: vector_print
     
     Prints all elements in the vector.
