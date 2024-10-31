@@ -113,3 +113,25 @@ int vector_find_index_of_value(Vector *vector, int value);
         vector - Pointer to the Vector instance.
 */
 void vector_print(Vector *vector);
+
+/*
+    Function: vector_clear
+    
+    Resets all elements to zero and clears the vector.
+    
+    Parameters:
+        vector - Pointer to the Vector instance.
+*/
+void vector_clear(Vector *vector);
+
+/*
+    Function: vector_destroy
+    
+    Frees memory and resets the vector.
+    
+    Parameters:
+        vector - Pointer to the Vector instance.
+*/
+void vector_destroy(Vector *vector);
+
+#endif
